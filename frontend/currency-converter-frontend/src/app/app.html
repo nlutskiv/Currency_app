@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="card">
+    <h1>Currency Converter</h1>
+
+    <label>From</label>
+    <select [(ngModel)]="from">
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+
+    <label>Amount</label>
+    <input type="number" [(ngModel)]="amount" />
+
+    <label>To</label>
+    <select [(ngModel)]="to">
+      <option *ngFor="let currency of currencies" [value]="currency">
+        {{ currency }}
+      </option>
+    </select>
+
+    <button (click)="convert()">Convert</button>
+
+    <p class="result" *ngIf="result">
+      {{ result.amount }} {{ result.from }} =
+      {{ result.convertedAmount }} {{ result.to }}
+    </p>
+
+    <p class="error" *ngIf="error">{{ error }}</p>
+  </div>
+</div>
