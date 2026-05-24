@@ -2,30 +2,35 @@
   <div class="card">
     <h1>Currency Converter</h1>
 
+    <!-- "From" currency dropdown -->
     <label>From</label>
     <select [(ngModel)]="from">
+      <!-- Shows: GBP, USD, EUR, JPY -->
       <option *ngFor="let currency of currencies" [value]="currency">
         {{ currency }}
       </option>
     </select>
-
+    <!-- Amount input -->
     <label>Amount</label>
     <input type="number" [(ngModel)]="amount" />
 
+    <!-- "To" currency dropdown -->
     <label>To</label>
     <select [(ngModel)]="to">
       <option *ngFor="let currency of currencies" [value]="currency">
         {{ currency }}
       </option>
     </select>
-
+    <!-- Conversion button -->
     <button (click)="convert()">Convert</button>
 
+    <!-- Show result if it exists -->
     <p class="result" *ngIf="result">
       {{ result.amount }} {{ result.from }} =
       {{ result.convertedAmount }} {{ result.to }}
     </p>
 
+    <!-- Show error if it exists -->
     <p class="error" *ngIf="error">{{ error }}</p>
   </div>
 </div>

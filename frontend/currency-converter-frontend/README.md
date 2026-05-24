@@ -1,59 +1,79 @@
-# CurrencyConverterFrontend
+# Currency Converter App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.12.
+A full-stack currency converter built with Angular and ASP.NET Core.
 
-## Development server
+The frontend allows users to select currencies and convert an amount to a target currency with the click of a button.
+The backend communicates with the Frankfurter API for live conversion rates and handles the logic. 
 
-To start a local development server, run:
+
+## Tech Stack
+
+Frontend:
+- Angular
+- TypeScript
+
+Backend:
+- ASP.NET Core Web API
+- C#
+
+Testing:
+- xUnit
+
+
+## Features
+
+- Currency conversion using live exchange rates
+- Angular frontend
+- ASP.NET Core API backend
+- Service layer architecture
+- Error handling
+- Unit tests with mocked HTTP responses
+
+
+## Architecture
+
+Frontend:
+- Handles user interaction and displays results
+- Sends HTTP requests to backend API
+
+Backend:
+- Validates requests
+- Calls external exchange-rate API
+- Parses JSON response
+- Returns formatted conversion result
+
+Testing:
+- Unit tests isolate service logic using mocked HTTP handlers
+
+
+## Running the Application
+
+## Backend
 
 ```bash
+cd CurrencyConverterApi
+dotnet run
+```
+
+## Frontend
+
+Open a second terminal:
+
+```bash
+cd currency-converter-frontend
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Running Tests
 
 ```bash
-ng generate component component-name
+cd CurrencyConverterApi.Tests
+dotnet test
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Frontend runs on:
+http://localhost:4200
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Backend runs on:
+http://localhost:5072
