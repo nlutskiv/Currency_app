@@ -60,7 +60,7 @@ dotnet run
 Open a second terminal:
 
 ```bash
-cd currency-converter-frontend
+cd frontend/currency-converter-frontend
 npm install
 ng serve
 ```
