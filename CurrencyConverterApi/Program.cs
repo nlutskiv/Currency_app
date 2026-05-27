@@ -7,6 +7,7 @@ builder.Services.AddControllers();
 
 // Register HttpClient for CurrencyService
 builder.Services.AddHttpClient<CurrencyService>();
+builder.Services.AddScoped<ICurrencyService, CurrencyService>();
 
 // CORS = Allow Angular (running on port 4200) to talk to C# API (port 5072)
 builder.Services.AddCors(options =>

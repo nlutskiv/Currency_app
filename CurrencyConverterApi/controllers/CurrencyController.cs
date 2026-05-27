@@ -8,10 +8,9 @@ namespace CurrencyConverterApi.Controllers
     [Route("api/[controller]")]         // URL: /api/currency/...
     public class CurrencyController : ControllerBase
     {
-        private readonly CurrencyService _currencyService;
+        private readonly ICurrencyService _currencyService;
 
-        // Dependency injection 
-        public CurrencyController(CurrencyService currencyService)
+        public CurrencyController(ICurrencyService currencyService)
         {
             _currencyService = currencyService;
         }

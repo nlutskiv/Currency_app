@@ -3,7 +3,7 @@ using CurrencyConverterApi.Models;
 
 namespace CurrencyConverterApi.Services;
 
-public class CurrencyService
+public class CurrencyService : ICurrencyService
 {
     private readonly HttpClient _httpClient;
 
